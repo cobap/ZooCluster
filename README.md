@@ -4,8 +4,14 @@ Clusterização do Dataset Zoo
 
 ### Dataset
 
-[dataset]: http://archive.ics.uci.edu/ml/datasets/zoo
+Dataset contendo 100 linhas sobre a características de diversos animais divididos em 7 grupos distintos
+
+http://archive.ics.uci.edu/ml/datasets/zoo
 
 ### Equipe
 
-### Instalação & Utilização
+Antonio @cobap
+Guilherme @
+Vinicius @
+Kenny @
+Álex @

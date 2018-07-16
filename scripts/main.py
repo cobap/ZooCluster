@@ -2,6 +2,7 @@
 
 from process_zoo import ProcessZoo
 from som import SOM
+from kmeans import Kmeans
 
 def le_parametros():
 	"""Parametros para inpute no KMEANS e SOM.
@@ -21,10 +22,17 @@ if __name__ == "__main__":
 	animal_matrix = pre_process.get_original_matrix()
 
 	for parametros in le_parametros():
+		############################# SOM #############################
 		print(parametros)
 		_mapsize = int(parametros[0])*10
 		som = SOM(animal_matrix=animal_matrix, mapsize=[_mapsize, _mapsize], parametros=parametros)
-		som.train_som()
-		som.view2dpacked()
-		som.visualization_umatrix()
-		som.interpolation()
+		# som.train_som()
+		# som.view2dpacked()
+		# som.visualization_umatrix()
+		# som.interpolation()
+
+		############################# KMEANS #############################
+		kmeans = Kmeans(points=animal_matrix, k_centroids=4, n_iteracoes=100, error=0.1)
+		kmeans.run_kmeans()
+
+		############################# POS PROCESSAMENTO #############################

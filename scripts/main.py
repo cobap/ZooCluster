@@ -4,14 +4,15 @@ from process_zoo import ProcessZoo
 from som import SOM
 from kmeans import Kmeans
 
+
 def le_parametros():
 	"""Parametros para inpute no KMEANS e SOM.
-		1 - tamanho do mapsize
-		2 - tipo de vizinhança (gaussiana, bubble)
-		3 - inicializando do SOM (PCA, aleatoria)
-		4 - SOM clusters para visualizacao
+	
+	1 - tamanho do mapsize
+	2 - tipo de vizinhanca (gaussiana, bubble)
+	3 - inicializando do SOM (PCA, aleatoria)
+	4 - SOM clusters para visualizacao
 	"""
-
 	parametros = None
 	with open('./parametros.txt', 'r') as inp:
 		parametros = inp.read().splitlines()

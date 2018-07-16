@@ -1,5 +1,6 @@
 """."""
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 class Kmeans():
@@ -78,3 +79,8 @@ class Kmeans():
                 _ponto[centroid_vencedor] = _data
                 _novos_centroids.append(_ponto)
             self.recalcula_centroids(_novos_centroids)
+
+    def print_dataset(self):
+        """."""
+        plt.scatter(self.point[0], self.point[1], alpha=0.5)
+        plt.show()

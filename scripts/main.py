@@ -7,7 +7,7 @@ from kmeans import Kmeans
 
 def le_parametros():
 	"""Parametros para inpute no KMEANS e SOM.
-	
+
 	1 - tamanho do mapsize
 	2 - tipo de vizinhanca (gaussiana, bubble)
 	3 - inicializando do SOM (PCA, aleatoria)
@@ -27,6 +27,7 @@ if __name__ == "__main__":
 		print(parametros)
 		_mapsize = int(parametros[0])*10
 		som = SOM(animal_matrix=animal_matrix, mapsize=[_mapsize, _mapsize], parametros=parametros)
+		# som.view2dpacked()
 		# som.train_som()
 		# som.view2dpacked()
 		# som.visualization_umatrix()

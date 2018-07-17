@@ -3,6 +3,7 @@
 # import matplotlib.pylab as plt
 import numpy as np
 import sompy
+import matplotlib.pyplot as plt
 
 # A toy example: two dimensional data, four clusters
 # fig = plt.figure()
@@ -69,8 +70,20 @@ class SOM():
         u.save(str(self.parametros + 'img5'))
 
     def interpolation(self):
+        """."""
         plt.imshow(self.som, interpolation='none')
         plt.show()
+
+    def visualization2(self):
+        """."""
+        self.som.init_map()
+        setattr(self.som, 'compname', header)
+        self.som.view_map(which_dim = 'all')
+
+    def visualization3(self):
+        self.som.view_map(which_dim = 'all')
+        sm.view_map(which_dim= 'all' , pack='Yes',text_size=6,save='No',save_dir='')
+        sm.hit_map()
 
 # mapsize = [30,30]
 # som = sompy.SOMFactory.build(Data2, mapsize, mask=None, mapshape='planar', lattice='rect', normalization='var', initialization='pca', neighborhood='gaussian', training='batch', name='sompy')  # this will use the default parameters, but i can change the initialization and neighborhood methods
@@ -97,3 +110,7 @@ class SOM():
 # UMAT  = u.build_u_matrix(som, distance=1, row_normalized=False)
 #
 # UMAT = u.show(som, distance2=1, row_normalized=False, show_data=True, contooor=False, blob=False)
+
+"""
+we can either use random values for initializing the som weight vectors or we can linearly initialize them. For that, we first need to calculate eigenvectors of the correlation matrix of the original data. Then, we take two largest eigenvalues and their corresponding eigenvectors and initialize the weight vectors linealy alongside of the SOM map based on these two PCs. For large data size it is better to use Randomized PCA method as it is fast and the results are good. We use RandomizedPCA from scikitlearn package. As we could expect, the first two PCs show which features have mutual correlation, but certainly in a linear way. If SOM training starts based on this PCA based initial values, the training needs less number of iterations.
+"""
